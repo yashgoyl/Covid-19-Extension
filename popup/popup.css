@@ -1,0 +1,275 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+:root {
+  --main-flower: #517bd6;
+}
+
+@media (max-width:800px) {
+  body {
+      height: 600px;
+      width: 800px;
+  }
+}
+
+
+.flower {
+  position: relative;
+}
+
+.flower__head {
+  width: 30px;
+  max-width: 100%;
+  height: 7.5px;
+  max-height: 100%;
+  border-radius: 20px;
+  background: var(--main-flower);
+  margin-top: 20px;
+  margin-left: 20px;
+  animation: rotation 8s infinite linear, back-rainbow 5s infinite;
+}
+
+@keyframes back-rainbow{
+  0%{background-color: orange;}	
+  20%{background-color: red;}
+  10%{background-color: purple;}	
+  30%{background-color: CadetBlue;}
+  40%{background-color: yellow;}
+  50%{background-color: coral;}
+  60%{background-color: green;}
+  70%{background-color: cyan;}
+  80%{background-color: DeepPink;}
+  90%{background-color: DodgerBlue;}
+  100%{background-color: orange;}
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.flower__head::after, .flower__head::before {
+  content: '';
+  position: absolute;
+  background: var(--main-flower);
+  border-radius: 20px;
+  width: 30px;
+  height: 7.5px;
+  transform: rotate(60deg);
+  animation: back-rainbow 5s infinite;
+}
+
+.flower__head::before {
+  transform: rotate(-60deg);
+}
+
+.neumorphic {
+  box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
+    -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+  font-size: 5rem;
+  width: 200px;
+  max-width: 100%;
+  height: 200px;
+  max-height: 100%;
+  border-radius: 40px;
+  overflow: hidden;
+  padding: 1.3rem;
+  display: flex;
+  margin-left: 15px;
+}
+.variation2 {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.variation2 span {
+  display: block;
+  padding-bottom: 1.5rem;
+  position: relative;
+  font-size: 3rem;
+}
+
+.variation2 span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 0.3rem;
+  border-radius: 1rem;
+  width: 50%;
+  margin: 0 auto;
+  background-color: currentColor;
+  animation: increase 2s infinite linear;
+  animation-delay: 2s;
+}
+
+@keyframes increase {
+  from {
+    transform:translateX(0%) scaleX(0);
+    transform-origin:left;
+  }
+  20% {
+    transform:translateX(20%) scaleX(0.2);
+    transform-origin:left;
+  }
+  40% {
+    transform:translateX(20%) scaleX(0.5);
+    transform-origin:right;
+  }
+  60% {
+    transform:translateX(20%) scaleX(0.4);
+    transform-origin:right;
+  }
+  80% {
+    transform:translateX(20%) scaleX(0.3);
+    transform-origin:right;
+  }
+  100% {
+    transform:translateX(0%) scaleX(0);
+    transform-origin:right;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 230px;
+  background-color: #e0e0e0;
+  min-width: 500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  /* animation: rainbow 5s infinite; */
+  font-family: 'Pacifico', cursive;
+}
+
+@keyframes rainbow{
+  0%{color: orange;}	
+  10%{color: purple;}	
+  20%{color: red;}
+  30%{color: CadetBlue;}
+  40%{color: yellow;}
+  50%{color: coral;}
+  60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+  100%{color: orange;}
+}
+
+.filters {
+  margin-top: 40px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 88vw;
+  height: 70px;
+}
+
+#myInput {
+  box-shadow: 10px 5px 28px 0px rgba(0,0,0,0.55);
+}
+
+.data-ctn {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.data-col {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 10px 5px 28px 0px rgba(0,0,0,0.55);
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.data-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.data-change {
+  font-size: 12px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.data-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.confirmed {
+  color: #ff6e40;
+}
+
+.active {
+  color: #1e847f;
+}
+
+.recovered {
+  color: #6b7b4c;
+}
+
+.deceased {
+  color: red;
+}
+
+.last-updated {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+.filters .search-button svg {
+  color: rgba(108,117,125,.6);
+  left: .75rem;
+  position: absolute;
+  top: 1.25rem;
+  transition: all .2s ease-in-out;
+  margin-top: 98px;
+  margin-left: 50px;
+}
+
+

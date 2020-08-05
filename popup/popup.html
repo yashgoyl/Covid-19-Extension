@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>COVID-19 India Live Tracker</h1>
+      <div class="flower">
+      <div class="flower__head">
+      </div>
+    </div>
+    </div>
+
+    <div class="filters">
+      <div class="search-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+      <input type="text" id="myInput" placeholder="Search for states.." title="Type in a name">
+    </div>
+    <div class="data-ctn">
+      <div class="neumorphic variation2 confirmed">
+        <span>
+          <div class="data-title">Confirmed</div>
+          <div class="data-change">&nbsp;</div>
+          <div class="data-value">-</div>
+        </span>
+      </div>
+      <div class="neumorphic variation2 active">
+        <span>
+          <div class="data-title">Active</div>
+          <div class="data-change">&nbsp;</div>
+          <div class="data-value">-</div>
+        </span>
+      </div>
+      <div class="neumorphic variation2 recovered">
+        <span>
+          <div class="data-title">Recovered</div>
+          <div class="data-change">&nbsp;</div>
+          <div class="data-value">-</div>
+        </span>
+      </div>
+      <div class="neumorphic variation2 deceased">
+        <span>
+          <div class="data-title">Deaths</div>
+          <div class="data-change">&nbsp;</div>
+          <div class="data-value">-</div>
+        </span>
+      </div>
+    </div>
+    <div class="last-updated">
+      Last updated: <span class="lu-value">-</span>
+    </div>
+
+    <!-- JS script -->
+    <script src="./popup.js"></script>
+  </body>
+</html>
